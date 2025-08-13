@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato - Receitas Caseiras</title>
+<?php include 'registrar_visita.php'; ?>
+<style>
+    body {
+        font-family: 'Georgia', serif;
+        background-color: #f7ede2;
+        color: #5b3a29;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #7a4b2b;
+        margin-bottom: 20px;
+    }
+
+    p {
+        text-align: center;
+        color: #6e4a2e;
+        margin-bottom: 30px;
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin: auto;
+        background: #fff8f0;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(115, 81, 46, 0.15);
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #a67c52;
+        font-size: 1em;
+        background-color: #fffaf5;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    button {
+        background-color: #d35400;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #b84300;
+    }
+</style>
+</head>
+<body>
+
+<h1>📞 Entre em Contato</h1>
+<p>Tem alguma dúvida, sugestão ou receita para compartilhar? Envie sua mensagem!</p>
+
+<div class="form-container">
+    <form action="contato.php" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+
+        <button type="submit">Enviar Mensagem</button>
+    </form>
+</div>
+
+</body>
+</html>

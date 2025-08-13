@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Receitas Caseiras - Início</title>
+  <?php include 'registrar_visita.php'; ?>
+  <style>
+    /* Paleta inspirada em tons terrosos e acolhedores */
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #f7ede2; /* creme claro */
+      color: #5b3a29; /* marrom quente */
+      padding: 20px;
+    }
+
+    /* ===== MENU ===== */
+    .menu-toggle {
+      background-color: #d35400;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1001;
+      
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #fff3e0;
+      padding: 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #5d4037;
+      display: block;
+      padding: 8px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #ffe0b2;
+    }
+
+    /* ===== CONTEÚDO ===== */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-weight: normal;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      color: #7a4b2b; /* marrom médio */
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1em;
+      text-align: center;
+      color: #6e4a2e;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff8f0; /* tom claro, quase bege */
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(115, 81, 46, 0.15);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      font-family: 'Georgia', serif;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 15px rgba(115, 81, 46, 0.3);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(115, 81, 46, 0.1);
+    }
+
+    .card h3 {
+      margin: 5px 0;
+      color: #5b3a29;
+      font-weight: 600;
+      font-size: 1.3em;
+    }
+
+    .card h4 {
+      font-size: 0.95em;
+      color: #a67c52; /* tom caramelo */
+      margin-top: 10px;
+      margin-bottom: 8px;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .card p {
+      color: #7a5a3e;
+      font-size: 1em;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 1024px) {
+  .menu {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .menu {
+    font-size: 16px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .menu {
+    font-size: 14px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Botão de menu -->
+  <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('active')">☰</button>
+
+  <!-- Menu lateral -->
+  <nav class="sidebar">
+    <h2>🍴 Receitas</h2>
+    <ul>
+      <li><a href="index.html">🏠 Início</a></li>
+      <li><a href="#">🥧 Bolos para Festa</a></li>
+      <li><a href="#">🍲 Café da Tarde</a></li>
+      <li><a href="#">🍪 Sobremesas</a></li>
+       <li><a href="#">🍪 Saudáveis</a></li>
+        <li><a href="#">🍪 Tropicais</a></li>
+        <li><a href="contato.html">📞 Contato</a></li>
+    </ul>
+  </nav>
+
+  <h1>Bem-vindo ao Receitas Caseiras!</h1>
+  <p>Aqui você encontra as melhores receitas para preparar em casa com todo carinho.</p>
+
+  <div class="cards">
+    <a href="pão-caseiro.html" class="card">
+      <img src="pãocaseiro.jpg" alt="Pão Caseiro" />
+      <h4>PÃES</h4>
+      <h3>Pão Caseiro</h3>
+      <p>Aprenda a fazer um pão simples e delicioso.</p>
+    </a>
+
+    <a href="torta-maracuja.html" class="card">
+      <img src="tortademaracuja.jpg" alt="Torta de Maracujá" />
+      <h4>SOBREMESAS</h4>
+      <h3>Torta de Maracujá</h3>
+      <p>Torta cremosa de maracujá, com sabor tropical equilibrando doçura e acidez, finalizada com cobertura brilhante e irresistível.</p>
+    </a>
+
+    <a href="receita-bolo.html" class="card">
+      <img src="bolo-de-chocolate-facil.jpg" alt="Bolo de Chocolate" />
+      <h4>SOBREMESAS</h4>
+      <h3>Bolo de Chocolate</h3>
+      <p>Um bolo com sabor intenso de chocolate.</p>
+    </a>
+
+    <a href="bolodenozes.html" class="card">
+      <img src="bolodenozes.jpg" alt="Bolo de Nozes" />
+      <h4>SOBREMESAS</h4>
+      <h3>Bolo de Nozes</h3>
+      <p>É uma iguaria clássica, conhecida pelo seu sabor rico e textura agradável.</p>
+    </a>
+
+    <a href="bolodecenoura.html" class="card">
+      <img src="bolo-de-cenoura.webp" alt="Bolo de Cenoura" />
+      <h4>SOBREMESAS</h4>
+      <h3>Bolo de Cenoura</h3>
+      <p>Bolo fofinho de cenoura com cobertura cremosa de chocolate, simples e irresistível.</p>
+    </a>
+    
+    <a href="bolodelimão.html" class="card">
+      <img src="bolodelimão.avif" alt="Bolo de Limão" />
+      <h4>SOBREMESAS</h4>
+      <h3>Bolo de Limão</h3>
+      <p>Bolo leve e aromático, com toque cítrico refrescante e cobertura delicada de limão.</p>
+    </a>
+
+    <a href="bolodelaranja.html" class="card">
+      <img src="bolodelaranja.webp" alt="Bolo de Laranja" />
+      <h4>CAFÉ DA TARDE</h4>
+      <h3>Bolo de Laranja</h3>
+      <p>Bolo macio e perfumado, com sabor intenso de laranja e frescor natural em cada fatia.</p>
+    </a>
+
+    <a href="bolodemilho.html" class="card">
+      <img src="bolodemilho.jpg" alt="Bolo de Milho" />
+      <h4>CAFÉ DA TARDE</h4>
+      <h3>Bolo de Milho</h3>
+      <p>Bolo cremoso e dourado, com sabor caseiro de milho e textura macia que derrete na boca.</p>
+    </a>
+
+    <a href="bolodemandioca.html" class="card">
+      <img src="bolodemandioca.jpeg" alt="Bolo de Mandioca" />
+      <h4>CAFÉ DA TARDE</h4>
+      <h3>Bolo de Mandioca</h3>
+      <p>Bolo rústico e úmido, com sabor autêntico de mandioca e toque aconchegante de receita caseira.</p>
+    </a>
+    
+  </div>
+
+</body>
+</html>
